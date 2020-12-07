@@ -70,6 +70,15 @@
       msg += "</table>";
       $("#message").html(msg);
     }
+
+    functionsearchName(){
+      let name=$("#name").val();
+      let TestDataClass=ncmb.DataStore(db);
+      TestDataClass.order("name",name.fetchAll()
+      .then(function(results) {
+        showResults(results);
+      })
+    }
     </script>
 </head>
 <body>
@@ -85,6 +94,7 @@
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
      <button class="btn" onclick="  searchName()">Name</button>
+     <button class="btn" onclick="  searchLevel()">Level</button>
   </div>
   <div id="message">initializing...</div>
 </body>
