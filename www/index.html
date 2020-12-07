@@ -79,6 +79,15 @@
         showResults(results);
       })
     }
+
+     functionsearchLevel(){
+      let level=parseInt($("#level").val(),10);
+      let TestDataClass=ncmb.DataStore(db);
+      TestDataClass.order("level",level).fetchAll()
+      .then(function(results) {
+        showResults(results);
+      })
+    }
     </script>
 </head>
 <body>
